@@ -5,4 +5,4 @@ organization := "ch.epfl.scala"
 version := "1.0"
 
 
-libraryDependencies += "org.scala-lang.modules" %% "scala-parser-combinators" % "2.1.1"
+libraryDependencies += "com.twitter" %% "finagle-http" % "22.4.0"
