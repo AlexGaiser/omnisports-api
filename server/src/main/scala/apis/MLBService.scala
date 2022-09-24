@@ -1,3 +1,5 @@
 package apis
 
-case class MLBService()
+case class MLBService() {
+  val name = "MLB Service"
+}
