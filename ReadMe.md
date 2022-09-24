@@ -26,3 +26,6 @@ Display player information
 
 **Version 5**
 Get ticket information using the TicketMaster API
+
+
+**Note:** Created using `sbt new scala/hello-world.g8`
