@@ -1,18 +1,17 @@
-import apis.MLBService
-import com.twitter.finagle.{Http, Service}
-import com.twitter.finagle.http
-import com.twitter.util.{Await, Future}
 
 
-object Server extends App {
-  val mlb = MLBService()
-  println(mlb.name)
-  val service = new Service[http.Request, http.Response] {
-    def apply(req: http.Request): Future[http.Response] =
-      Future.value(
-        http.Response(req.version, http.Status.Ok)
-      )
-  }
-  val server = Http.serve(":8080", service)
-  Await.ready(server)
+object MyAppMain extends MyApp
+
+//
+class MyApp {
+  //  extends App with Slf4jBridge {
+  //
+  //  override val modules = Seq[Module](MLBServiceModule)
+  //
+  //  override protected def run(): Unit = {
+  //    // Core app logic goes here.
+  //    val mlbService = injector.instance[MLBService]
+  //    println(s"Input username")
+  //    println(mlbService.name)
+  //  }
 }
