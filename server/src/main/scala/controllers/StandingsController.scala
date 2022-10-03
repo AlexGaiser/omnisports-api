@@ -16,11 +16,9 @@ case class StandingsController @Inject()(mlbProvider: MLBService) extends Contro
     println("hello")
     response.ok.body("Bob")
   }
-
+  
   get("/standings") { request: Request =>
-    response.ok.body(Await.result(mlbProvider.standings()))
+    val standings = Await.result(mlbProvider.standings())
+    standings
   }
-
 }
-
-
