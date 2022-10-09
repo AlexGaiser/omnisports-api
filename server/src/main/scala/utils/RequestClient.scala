@@ -13,18 +13,20 @@ trait HttpClient {
 }
 
 case class SttpClient()(implicit executionContext: ExecutionContext) {
-  implicit val serialization = org.json4s.native.Serialization
-  implicit val formats = org.json4s.DefaultFormats
   val backend = AkkaHttpBackend()
 
   def get[T](url: URL)(implicit ev: scala.reflect.Manifest[T]): Future[T] = {
-    val request = basicRequest.get(uri"${url.toString}").response(asJson[T].getRight)
+    val request = basicRequest.get(uri"${url.toString}").responseGetRight
     val response = FutureUtils.RichScalaFuture(request.send(backend)).asTwitter
     for {
       r <- response
     } yield {
-      r.body
+      JsonUtil.fromJson[T](r.body)
     }
   }
 }
 
+case class RequestClient() {
+
+
+}
