@@ -4,7 +4,7 @@ import com.twitter.finagle.{Http, Service, http}
 import com.twitter.finatra.jackson.modules.ScalaObjectMapperModule
 import com.twitter.util.jackson.ScalaObjectMapper
 import models.MLB.StandingsResponse
-import utils.{RequestClient, SttpClient}
+import utils.{SttpClient}
 
 import java.net.URL
 import scala.concurrent.ExecutionContext
