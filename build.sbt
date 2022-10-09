@@ -1,4 +1,4 @@
-scalaVersion := "2.13.8"
+scalaVersion := "2.12.12"
 name := "omnisports-api"
 organization := "ch.epfl.scala"
 version := "1.0"
